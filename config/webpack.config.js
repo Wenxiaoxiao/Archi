@@ -101,6 +101,9 @@ module.exports = function(webpackEnv) {
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
       },
+      {
+        loader:require.resolve('less-loader')// compiles Less to CSS
+      }
     ].filter(Boolean);
     if (preProcessor) {
       loaders.push({
@@ -313,6 +316,25 @@ module.exports = function(webpackEnv) {
           // match the requirements. When no loader matches it will fall
           // back to the "file" loader at the end of the loader list.
           oneOf: [
+            {
+              test: /\.less$/,
+              use: [
+                {
+                  loader:"style-loader"
+                },{
+                  loader:"css-loader"
+                },{
+                  loader:"less-loader",
+                  options:{
+                    sourceMap:true,
+                    modifyVars:{
+                      '@primary-color': '#1DA57A',
+                    },
+                    javascriptEnabled:true
+                  }
+                }
+              ]
+            },
             // "url" loader works like "file" loader except that it embeds assets
             // smaller than specified limit in bytes as data URLs to avoid requests.
             // A missing `test` is equivalent to a match.
@@ -336,6 +358,7 @@ module.exports = function(webpackEnv) {
                 ),
                 
                 plugins: [
+                  ['import', { libraryName: 'antd', style: 'css' }],
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {
