@@ -1,0 +1,241 @@
+/* 整体样式*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+html,body{
+  width:100%;
+  height:100%;
+}
+#root>div{
+  width:100%;
+  height:100%;
+  position: relative;
+}
+#root{
+  width:100%;
+  height:100%;
+  background:url('./Page/Images/bg/bg.png');
+  .login_wrap{
+    width:902px;
+    height:532px;
+    background:#fff;
+    border-radius: 10px;
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    padding:30px 36px;
+    .login_box{
+      background:#73a9fd;
+      width:100%;
+      height:100%;
+      overflow: hidden;
+      .login_content{
+        width:432px;
+        height:250px;
+        background:#fff;
+        margin:107px auto;
+        .login_left{
+          width:220px;
+          height:250px;
+          float:left;
+          overflow: hidden;
+          .designAnimate{
+            width:30px;
+            height:30px;
+            margin: 110px auto;
+            div{
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+              background:#73a9fd;
+            }
+          }
+        }
+        .login_right{
+          width:212px;
+          height:250px;
+          padding:55px 40px 47px 40px;
+          float:left;
+          overflow: hidden;
+          .login_main{
+            width:100%;
+            height:100%;
+            .title{
+              font-family: STXingkai;
+              font-size: 18px;
+              color:#497eff;
+              height: 24px;
+              line-height: 24px;
+            }
+            .username{
+              margin-top:8px;
+              // border-color:#c3dbff;
+              height:25px;
+              font-size:13px;
+            }
+            .password{
+              margin-top:8px;
+              // border-color:#c3dbff;
+              height:25px;
+              font-size:13px;
+            }
+            .login_submit{
+              background:#5a8aff;
+              color:#fff;
+              height:25px;
+              border:1px solid #3f77ff;
+              margin-top:17px;
+              text-align: center;
+              line-height:21px;
+              font-size:13px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  .layout_main{
+    height:100%;
+    width:100%;
+    overflow: hidden;
+    position: relative;
+    .layout_header{
+      height:42px;
+      line-height:42px;
+      font-size:20px;
+      font-weight:bold;
+      text-indent:5px;
+      width:100%;
+      background:#73a9fd;
+      color:#fff;
+      position: absolute;
+      left:0;
+      top:0;
+    }
+    .leftside_menu{
+      padding-top:42px;
+      height:100%;
+      width:80px;
+      float:left;
+      .content{
+        background:#fff;
+        width:100%;
+        height:100%;
+        div{
+          width:80px;
+          height:60px;
+          line-height:60px;
+          cursor: pointer;
+          text-indent: 5px;
+        }
+        .active_menu{
+          border-right: 4px solid #73a9fd;
+          font-weight:bold;
+        }
+      }
+    }
+    .rightside_page{
+      float:left;
+      padding-top:42px;
+      height:100%;
+    }
+  }
+}
+
+/* 动画*/
+@keyframes updownbounce {                     /*通过@keyframes规则,创建updownbounce动画;*/
+  0%,20%,50%,80%,100% {
+  transform:translateY(0);
+  background:rgba(114,169,253,1)
+  }
+  40% {
+  transform:translateY(-10px);
+  background:rgba(114,169,253,0.5)
+  }
+  60% {
+  transform:translateY(0px);
+  background:rgba(114,169,253,0)
+  }
+}
+@keyframes updownbounce1 {                     /*通过@keyframes规则,创建updownbounce动画;*/
+  0%,20%,50%,80%,100% {
+  transform:translateY(0);
+  background:rgba(114,169,253,0)
+  }
+  40% {
+  transform:translateY(-10px);
+  background:rgba(114,169,253,0.5)
+  }
+  60% {
+  transform:translateY(0px);
+  background:rgba(114,169,253,1)
+  }
+}
+.updownbounce {
+  animation-name:updownbounce;              /*调用updownbounce动画;*/
+}
+.updownbounce1 {
+  animation-name:updownbounce1;              /*调用updownbounce动画;*/
+}
+.animated_bounce {
+  animation-duration:3s;              /*一个动画周期的时长;*/
+  animation-fill-mode:both;           /*指定动画执行之前之后的样式;*/
+}
+.animated_bounce.infinite_bounce {
+  animation-iteration-count:infinite; /*定义动画播放的次数;(n次/infinite无限次);*/
+}
+
+/* MyZone界面样式*/
+.rightside_page{
+ .myzone{
+  background:#ecf1f9;
+  width:100%;
+  height:100%;
+  padding:28px 20px 42px 23px;
+  .box{
+    width:100%;
+    height:100%;
+    .wrapper{
+      width:100%;
+      height:50%;
+      columns: 4 10px;
+      padding-bottom:14px;
+    }
+    .item{
+      background:#fff;
+      width:100%;
+      height:100%;
+      text-align: center;
+      line-height:30px;
+      font-size:20px;
+      padding:10px;
+      cursor: pointer;
+    }
+    .wrapper1{
+      width:100%;
+      height:50%;
+      columns: 4 10px;
+      padding-top:14px;
+    }
+  }
+ }
+}
+/* Home界面样式*/
+.rightside_page{
+
+}
