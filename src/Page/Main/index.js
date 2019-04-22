@@ -4,6 +4,14 @@ import {
   Route,Switch
 } from 'react-router-dom';
 import MyZone from '../MyZone';
+import Book from '../MyZone/Book';
+import Collect from '../MyZone/Collect';
+import Diary from '../MyZone/Diary';
+import Note from '../MyZone/Note';
+import Piece from '../MyZone/Piece';
+import Plan from '../MyZone/Plan';
+import Websit from '../MyZone/Websit';
+import Willing from '../MyZone/Willing';
 import Home from '../Home';
 
 class Main extends Component {
@@ -25,7 +33,7 @@ class Main extends Component {
 
   Aauthority = (props) => {
 
- 
+
   }
 
   TitleClick= (key,name) => {
@@ -65,6 +73,14 @@ class Main extends Component {
         <Router>
           <Switch> 
             <Route exact path="/Main" component={MyZone} />
+            <Route exact path="/Main/Book" component={Book} />
+            <Route exact path="/Main/Collect" component={Collect} />
+            <Route exact path="/Main/Diary" component={Diary} />
+            <Route exact path="/Main/Note" component={Note} />
+            <Route exact path="/Main/Piece" component={Piece} />
+            <Route exact path="/Main/Plan" component={Plan} />
+            <Route exact path="/Main/Websit" component={Websit} />
+            <Route exact path="/Main/Willing" component={Willing} />
             <Route path="/Main/Home" component={Home} />
           </Switch> 
          </Router>

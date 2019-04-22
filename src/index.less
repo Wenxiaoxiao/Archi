@@ -25,7 +25,9 @@ html,body{
 #root{
   width:100%;
   height:100%;
-  background:url('./Page/Images/bg/bg.png');
+  background:url('./Page/Images/bg/bg.png') no-repeat;
+  background-repeat: repeat-x;
+  background-size: 122px 100%;
   .login_wrap{
     width:902px;
     height:532px;
@@ -53,15 +55,18 @@ html,body{
           height:250px;
           float:left;
           overflow: hidden;
+          background: url(http://www.w3school.com.cn/i/bg_flower.gif) no-repeat center;
           .designAnimate{
             width:30px;
             height:30px;
-            margin: 110px auto;
+            margin: 60px 60px;
+            // margin: 110px auto;
             div{
               width: 25px;
               height: 25px;
               border-radius: 50%;
-              background:#73a9fd;
+              background:#7566a4;
+              // background:#73a9fd;
             }
           }
         }
@@ -115,8 +120,8 @@ html,body{
     overflow: hidden;
     position: relative;
     .layout_header{
-      height:42px;
-      line-height:42px;
+      height:64px;
+      line-height:64px;
       font-size:20px;
       font-weight:bold;
       text-indent:5px;
@@ -128,7 +133,7 @@ html,body{
       top:0;
     }
     .leftside_menu{
-      padding-top:42px;
+      padding-top:64px;
       height:100%;
       width:80px;
       float:left;
@@ -151,7 +156,7 @@ html,body{
     }
     .rightside_page{
       float:left;
-      padding-top:42px;
+      padding-top:64px;
       height:100%;
     }
   }
@@ -161,29 +166,29 @@ html,body{
 @keyframes updownbounce {                     /*通过@keyframes规则,创建updownbounce动画;*/
   0%,20%,50%,80%,100% {
   transform:translateY(0);
-  background:rgba(114,169,253,1)
+  background:rgba(117,102,164,1)
   }
   40% {
   transform:translateY(-10px);
-  background:rgba(114,169,253,0.5)
+  background:rgba(117,102,164,0.5)
   }
   60% {
   transform:translateY(0px);
-  background:rgba(114,169,253,0)
+  background:rgba(117,102,164,0)
   }
 }
 @keyframes updownbounce1 {                     /*通过@keyframes规则,创建updownbounce动画;*/
   0%,20%,50%,80%,100% {
   transform:translateY(0);
-  background:rgba(114,169,253,0)
+  background:rgba(117,102,164,0)
   }
   40% {
   transform:translateY(-10px);
-  background:rgba(114,169,253,0.5)
+  background:rgba(117,102,164,0.5)
   }
   60% {
   transform:translateY(0px);
-  background:rgba(114,169,253,1)
+  background:rgba(117,102,164,1)
   }
 }
 .updownbounce {
@@ -198,6 +203,22 @@ html,body{
 }
 .animated_bounce.infinite_bounce {
   animation-iteration-count:infinite; /*定义动画播放的次数;(n次/infinite无限次);*/
+}
+
+/*拾色器样式重写 */
+input[type=color] {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  width: 100px;
+  height: 100px;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  margin-bottom: 35px;
+}
+input[type=color]:hover {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 /* MyZone界面样式*/
